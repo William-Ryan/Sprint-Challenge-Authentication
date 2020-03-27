@@ -21,7 +21,7 @@ const reducer = (state = initialState,  action) => {
         case FETCH_SUCCESS:
             return {
                 ...state,
-                volunteer: action.payload,
+                jokes: action.payload,
                 isFetching: false,
                 errors: ''
             }
