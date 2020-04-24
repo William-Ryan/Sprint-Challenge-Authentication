@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory} from "react-router-dom"
 import { axiosWithAuth } from "../utils/axiosWithAuth"
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 const Register = () => {
     const [register, setRegister] = useState({
@@ -32,30 +33,33 @@ const Register = () => {
 
     return(
         <div>
+            <h1>Registration Page</h1>
             <div className="registerContainer">
-                <form onSubmit={handleSubmit}>
-                    <label htmlFor="username">Username:</label>
-                    <input
-                    type="text"
-                    id="username"
-                    name="username"
-                    value={register.username}
-                    onChange={handleChange}
-                    required
-                    />
-
-                    <label htmlFor="password">Password:</label>
-                    <input 
-                    type="password"
-                    id="password"
-                    name="password"
-                    value={register.password}
-                    onChange={handleChange}
-                    required
-                    />
-
-                    <button type="submit">Submit</button>
-                </form>
+                <Form inline onSubmit={handleSubmit} style={{justifyContent: 'center'}}>
+                    <FormGroup>
+                        <Label for="username">Username:</Label>
+                        <Input
+                        type="text"
+                        id="username"
+                        name="username"
+                        value={register.username}
+                        onChange={handleChange}
+                        required
+                        />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for="password">Password:</Label>
+                        <Input 
+                        type="password"
+                        id="password"
+                        name="password"
+                        value={register.password}
+                        onChange={handleChange}
+                        required
+                        />
+                    </FormGroup>
+                    <Button type="submit">Submit</Button>
+                </Form>
             </div>
         </div>
     )

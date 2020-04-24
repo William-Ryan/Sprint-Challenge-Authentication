@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import {Link} from "react-router-dom"
 import { useHistory } from "react-router-dom"
 import { axiosWithAuth } from "../utils/axiosWithAuth"
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 const Login = () => {
     const [login, setLogin] = useState({
@@ -33,30 +34,35 @@ const Login = () => {
 
     return (
         <div>
+            <h1>Login Here</h1>
             <div className="loginContainer">
-                <form onSubmit={handleSubmit}>
-                    <label htmlFor="username">Username:</label>
-                    <input
-                        type="text"
-                        name="username"
-                        label="username"
-                        value={login.username}
-                        onChange={handleChange}
-                        className="input"
-                        required
-                    />
-                    <label htmlFor="password">Password:</label>
-                    <input 
-                        type="password"
-                        name="password"
-                        label="password"
-                        value={login.password}
-                        onChange={handleChange}
-                        className="input"
-                        required
-                    />
-                    <button type="submit">Submit</button>
-                </form>
+                <Form inline onSubmit={handleSubmit} style={{justifyContent: 'center'}}>
+                    <FormGroup>
+                        <Label htmlFor="username">Username:</Label>
+                        <Input
+                            type="text"
+                            name="username"
+                            label="username"
+                            value={login.username}
+                            onChange={handleChange}
+                            className="input"
+                            required
+                        />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label htmlFor="password">Password:</Label>
+                        <Input 
+                            type="password"
+                            name="password"
+                            label="password"
+                            value={login.password}
+                            onChange={handleChange}
+                            className="input"
+                            required
+                        />
+                    </FormGroup>
+                    <Button type="submit">Submit</Button>
+                </Form>
                 <h6>Don't have an account yet? <Link to="/register">Sign up here!</Link></h6>
             </div>
         </div>

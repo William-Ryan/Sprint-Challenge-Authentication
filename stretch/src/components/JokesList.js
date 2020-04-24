@@ -1,12 +1,16 @@
 import React from "react";
+import { Card, CardTitle, CardText, Row, Col } from 'reactstrap';
 
 const JokesList = props => {
     return(
-        <div>
-            <div className="card">
-                <h2>Joke: {props.haha.joke}</h2>
-            </div>
-        </div>
+        <Row>
+            <Col style={{margin: '1% 26%'}}>
+                <Card body style={{background: 'cornflowerblue', padding: '10% 0%'}}>
+                    <CardTitle style={{fontSize: '3rem', fontWeight: 'bold'}}>Dad Jokes!</CardTitle>
+                    <CardText style={{fontSize: '1.5rem', margin: '0% 15%', fontStyle: 'italic'}}>{props.haha.joke}</CardText>
+                </Card>
+            </Col>
+        </Row>
     )
 }
 

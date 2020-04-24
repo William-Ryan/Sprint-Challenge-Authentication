@@ -11,7 +11,6 @@ const JokesPage = props => {
     }, [])
 
     return <div>
-        <h1 className="title">Jokes List</h1>
         <div className="card-container">
             {props.jokes.map(haha => (
                 <JokesList haha={haha} />
